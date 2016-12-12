@@ -1,0 +1,389 @@
+<div class="panel-content bordered">
+    <div class="panel panel-accordion">
+        <h2 class="h2-with-icon accordion-toggle">
+            <div class="cf">
+                <div class="col-8">
+                    <%= related_subject.name %>
+                </div>
+
+                <div class="col-2 indicators">
+                    <!-- TODO K and P show only on specific contitions   -->
+                    <a class="offer tooltip position-bottom-right" href="#tooltip">K<span>Kampaňová ponúka</span></a>&nbsp;
+                    <a class="offer tooltip position-bottom-right" href="#tooltip">P<span>Prolongácia</span></a>
+                </div>
+
+                <div class="col-2 tar">
+                    <%= link_to "Použiť ako klienta", clients_path({client: {ic: "47459921"}}), method: :post, class: "btn btn-default" %>
+                </div>
+
+            </div>
+
+            <small>
+                <% if related_subject.insolvence? || related_subject.liquidation? || related_subject.bankruptcy? || related_subject.distraint? || related_subject.expiration? %>
+                  <strong>KO - <span class="color-red ko">Negatívná událosť</span></strong>
+                <% else %>
+                  <strong>KO - <span class="color-green ko">V poriadku</span></strong>
+                <% end %>
+            </small>
+            <span class="fa fa-chevron-down"></span>
+        </h2>
+      <div class="accordion-content">
+            <div class="panel panel-accordion">
+                <h2 class="h2-with-icon accordion-toggle">
+                    Kontaktné údaje
+                    <span class="fa fa-chevron-down"></span>
+                </h2>
+
+                <div class="accordion-content">
+                    <table class="table-formable">
+                        <tr>
+                            <td class="name">IČO</td>
+                            <td>12345678</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Názov</td>
+                            <td><%= related_subject.name %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Právná forma</td>
+                            <td>spoločnosť s ručením obmedzeným</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Stav</td>
+                            <td>aktívný</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Hlavný predmet činnosti</td>
+                            <td>Obchodná spoločnosť</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Dátum zápisu do registra</td>
+                            <td>12. 12. 1986</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name p-t-20">Mesto</td>
+                            <td class="p-t-20">Bratislava-Petržalka</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">PSČ</td>
+                            <td>85107</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Štát</td>
+                            <td>Slovenská republika</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name p-t-20">ID klienta</td>
+                            <td class="p-t-20">12345677</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Segment</td>
+                            <td>CT20</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-accordion">
+                <h2 class="h2-with-icon accordion-toggle">
+                    Orgány spoločnosti
+                    <span class="fa fa-chevron-down"></span>
+                </h2>
+
+                <div class="accordion-content">
+                    <table class="table-formable">
+                        <tr>
+                            <th class="tal" colspan="2">Hlavná osoba</th>
+                        </tr>
+                        <tr>
+                            <td class="name">Meno</td>
+                            <td>Josef</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Priezvisko</td>
+                            <td>Mrkvička</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Rodné číslo</td>
+                            <td>8009140047</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Trvalé bydlisko</td>
+                            <td>Sevastoposlká 378, Praha, 10100</td>
+                        </tr>
+
+                        <tr>
+                            <th class="tal p-t-20" colspan="2">Jednatelé</th>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Meno</td>
+                            <td>Josef</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Priezvisko</td>
+                            <td>Mrkvička</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Rodné číslo</td>
+                            <td>8009140047</td>
+                        </tr>
+
+                        <tr>
+                            <td class="name">Trvalé bydlisko</td>
+                            <td>Sevastoposlká 378, Praha, 10100</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-accordion">
+                <h2 class="h2-with-icon accordion-toggle">
+                    Úverová angažovanosť v TB
+                    <span class="fa fa-chevron-down"></span>
+                </h2>
+
+                <div class="accordion-content">
+                    <table class="table-default" style="background-color: #fff;">
+                        <thead>
+                            <tr>
+                                <th>Produkt</th>
+                                <th>Uživatěľ</th>
+                                <th>Posledná úprava</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Zabezpečený úver</td>
+                                <td>Karel Kopfrkingl</td>
+                                <td>10. 12. 2016</td>
+                                <td><b class="color-green">Schválené</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>Kontokorent</td>
+                                <td>Paní Beáta</td>
+                                <td>9. 12. 2016</td>
+                                <td><b class="color-red">Zamietnuté</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>Nezabezpečený úver</td>
+                                <td>Franta Vomáčka</td>
+                                <td>7. 12. 2016</td>
+                                <td><b class="color-yellow">Čaká na dokumenty</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>Zabezpečený úver</td>
+                                <td>Josef Mrkvička</td>
+                                <td>6. 12. 2016</td>
+                                <td><b>Zažiadaný</b></td>
+                            </tr>
+                        </tbody>
+                    </table> <!-- /.expanded-table -->
+                </div>
+            </div>
+
+            <div class="panel panel-accordion">
+                <h2 class="h2-with-icon accordion-toggle">
+                    Finančné ukazovatele
+                    <span class="fa fa-chevron-down"></span>
+                </h2>
+
+                <div class="accordion-content">
+                    <table class="table-default table-large-num">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>2013&nbsp;-&nbsp;&euro;</th>
+                                <th>2014&nbsp;-&nbsp;&euro;</th>
+                                <th>2015&nbsp;-&nbsp;&euro;</th>
+                                <th>2016&nbsp;(priebežné)&nbsp;-&nbsp;&euro;</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Výnosy z hospodárskej činnosti <br /> spolu súčet&nbsp;<span class="color-gray">(riadok 2)</span></td>
+                                <td><span class="format-num">1234</span></td>
+                                <td><span class="format-num">5678</span></td>
+                                <td><span class="format-num">9101</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Tržby z predaja tovaru&nbsp;<span class="color-gray">(riadok 3)</span></td>
+                                <td><span class="format-num">67891</span></td>
+                                <td><span class="format-num">20579</span></td>
+                                <td><span class="format-num">26987</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Tržby z predaja vlastných výrobkov&nbsp;<span class="color-gray">(riadok 4)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Tržby z predaja služieb&nbsp;<span class="color-gray">(riadok 5)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Zmeny stavu vnútroorganizačných zásob (+/-)<br /><span class="color-gray">(účtová skupina 61) (riadok 6)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Aktivácia&nbsp;<span class="color-gray">(účtová skupina 62) (riadok 7)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Tržby z predaja dlhodobého nehmotného majetku,<br />dlhodobého hmotného majetku a materiálu&nbsp;<span class="color-gray">(riadok 7)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Náklady na hospodársku činnosť spolu&nbsp;<span class="color-gray">(riadok 10)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Opravné položky k zásobám&nbsp;<span class="color-gray">(riadok 13)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Odpisy dlhodobého nehmotného a dlhodobého <br /> hmotného majetku&nbsp;<span class="color-gray">(riadok 22)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Opravné položky k dlhodobému nehmotnému<br />majetku a dlhodobému hmotnému majetku&nbsp;<span class="color-gray">(riadok 23)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Zostatková cena predaného dlhodobého majetku <br /> a predaného materiálu&nbsp;<span class="color-gray">(riadok 24)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Opravné položky k pohľadávkam&nbsp;<span class="color-gray">(riadok 25)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Výsledok hospodárenia z hospodárskej činnost&nbsp;<span class="color-gray">(riadok 27 = 2 - 10)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Pridaná hodnota&nbsp;<span class="color-gray">(riadok 28)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Výnosy z finančnej činnosti spolu&nbsp;<span class="color-gray">(riadok 29)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Náklady na finančnú činnosť spolu&nbsp;<span class="color-gray">(riadok 45)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Výsledok hospodárenia z finančnej činnost&nbsp;<span class="color-gray">(riadok 55 = 29 - 45)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Výsledok hospodárenia za účtovné obdobie<br /> pred zdanením&nbsp;<span class="color-gray">(riadok 56 = 27 + 55)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Výsledok hospodárenia za účtovné obdobie<br /> po zdanení&nbsp;<span class="color-gray">(riadok 61)</span></td>
+                                <td><span class="format-num">123456</span></td>
+                                <td><span class="format-num">789101</span></td>
+                                <td><span class="format-num">234567</span></td>
+                                <td><span class="format-num">&dash;&dash;</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+      </div>
+    </div>
+</div>

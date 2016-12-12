@@ -1,0 +1,44 @@
+<div class="triangle"></div>
+
+  <div class="panel panel-clean m-t-50" id="search">
+
+    <%= render "clients/navigation" %>
+
+    <div class="col-offset-2 col-4">
+      <div class="panel-content bordered">
+        <h2 class="h2-with-icon">
+          Identifikácia klienta
+        </h2>
+
+        <%= form_for @client, html: { class: "form-boxed" } do |f| %>
+            <div class="form-group <%= 'has-error' if !@client.errors.blank? %>">
+                <%= f.label :ic, "IČ/RČ", class: "required", style: "text-align: left;" %>
+                <%= f.text_field :ic, class: "input-default", id: "client" %>
+                <span class="help-block"><%= @client.errors[:ic].to_sentence %></span>
+            </div>
+
+            <div class="form-group">
+                <%= f.check_box :non_customer, id: 'check1' %>
+                <label for="check1" class="checkbox">Non-Customer mod
+                    <span class="tooltip position-top-right">
+                        <span><b>Non-Customer</b> - Príprava ponúky bez prítomnosti klienta</span>
+                    </span>
+                </label>
+            </div>
+
+            <div class="form-group">
+              <div class="col-6 tal">
+                <%= f.submit "Vyhladať klienta", class: 'btn btn-default', style: 'margin-top: 10px' %>
+              </div>
+
+              <div class="col-6 tar">
+                <a class="btn" onclick="window.location='./'">
+                  Existujúce žiadosti
+                </a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div> <!-- /.panel-content -->
+  </div> <!-- /.panel#searcht -->

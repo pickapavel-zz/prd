@@ -1,0 +1,57 @@
+en:
+  updated: Návrh byl aktualizovaný
+  not_updated: Návrh se nepodařilo aktualizovat
+  clients:
+    index:
+      new_loan: Nový návrh
+    show:
+      corporation: Klient je zo segmentu XY, presmerujte na iného poradcu
+    add_partner:
+      partner_added: Firma bola pridaná
+      partner_not_added: Spoločnosť nemôže byť pridaná
+    remove_partner:
+      partner_removed: Spoločnosť bola odstránená
+      partner_not_removed: Spoločnosť nemôžu byť odstránené
+    add_collaborator:
+      collaborator_added: Spolupracovník bol pridaný
+      collaborator_not_found: Užívateľ nebol nájdený
+
+  sessions:
+    new:
+      login: Login
+      log_in_to: Log in to
+      log_in: Log in
+      email: Email
+      password: Password
+      havent_account: New Registration
+      forgot_password: Forgot Password?
+      remember_me: Remember Me
+    create:
+      logged_in: You are logged in!
+      wrong_password: Oh, this password doesn't work.
+      missing_user: "There is no such user with email '%{email}'."
+    destroy:
+      logged_out: You have been logged out.
+
+  client_type:
+    fir: FIR
+    fop: FOP
+    other: Jiné
+  legal_form:
+    physical: Fyzická osoba podnikající
+    ltd: spoločnosť s ručením obmedzeným
+    public_company: Veřejná obchodní společnost
+    corporation: Akciová společnost
+    commandite: Komanditní společnost
+    european_company: Evropská společnost
+    other: Jiná právní forma
+    housing_association: Bytové družstvo
+    svj: SVJ
+    owner_association: Společenství vlastníků jednotek
+  prompts:
+    login_required: Prosím prihláste sa
+
+  validations:
+    client:
+      ic:
+        format: Minimálny počet číslic je 6

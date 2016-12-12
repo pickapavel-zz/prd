@@ -1,0 +1,39 @@
+<div class="col-10 col-offset-2">
+
+    <div class="panel-content col-5 m-t-5 m-b-20">
+        <div>
+            <h2>Vyhladať spolupracovníky podľa E-mailu</h2>
+        </div>
+        <%= form_for @client, url: add_collaborator_client_path(@client), remote: true, html: {class: "form-boxed"} do |f| %>
+            <div class="input-with-button">
+                <%= f.text_field :user_email, class: "input-default" %>
+                <button type="submit" class="button-add">
+                    <i class="fa fa-user-plus"></i>
+                    Pridať užívateľa
+                </button>
+            </div>
+        <% end %>
+    </div>
+    <div class="cf"></div>
+
+
+    <div class="panel-content">
+        <span id='message'></span>
+        <div>
+            <h2>Spolupracovníci s prístupom</h2>
+        </div>
+        <table class="table-default">
+            <thead>
+              <tr>
+                  <th>Celé meno</th>
+                  <th>E-mail</th>
+                  <th>Tím</th>
+                  <th>Rola</th>
+              </tr>
+            </thead>
+            <tbody id='collaborators'>
+                <%= render partial: 'collaborators', locals: {client: @client} %>
+            </tbody>
+        </table>
+    </div>
+</div>

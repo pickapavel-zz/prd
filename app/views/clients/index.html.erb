@@ -1,0 +1,115 @@
+<div class="panel panel-clean m-t-50">
+  <div class="panel-content tar">
+      <a class="btn btn-huge btn-default " href="<%= new_client_path %>">
+        <i class="fa fa-user"></i>&nbsp;Nový klient
+      </a>
+  </div>
+
+  <div class="panel-content">
+    <table class="table-expand table-default">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Názov spoločnosti</th>
+          <th>IČ</th>
+          <th>užívatěľ</th>
+          <th>Posledná úprava</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td><label for="company-<%= client.id %>"><i class="fa fa-arrow-right"></i></label><input type="checkbox" id="company-<%= client.id %>" data-toggle="toggle"></td>
+            <td><%= client.title %></td>
+            <td><%= client.ic %></td>
+            <td><%= current_user.name %></td>
+            <td><%= client.updated_at.strftime("%d. %B %Y %H:%M") %></td>
+            <td>
+              <%= link_to "Nový návrh", client, class: "btn btn-default" %>
+            </td>
+            <td><label for="company-<%= client.id %>"><i class="fa fa-eye m-r-5"></i><b>Zásah nutný</b></label></td>
+          </tr>
+
+          <tr>
+            <td colspan="7" class="invisible-cell">
+                <div class="table-detail cf" style="display: none;">
+                    <table class="table-default" style="background-color: #fff;">
+                        <thead>
+                            <tr>
+                                <!-- Type of financail product -->
+                                <th>Produkt</th>
+                                <!-- User -->
+                                <th>Uživatěľ</th>
+                                <!-- Last update - date -->
+                                <th>Posledná úprava</th>
+                                <!-- state -->
+                                <th>Status</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                          <% client.loan_applications.each do |la| %>
+                            <tr>
+                                <td><%= la.title %></td>
+                                <td><%= la.user_name %></td>
+                                <td><%= la.updated_at.strftime("%d. %m. %Y") %></td>
+                                <td><%= la.formatted_status %></td>
+                                <td>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), client_path(client), class: 'link'  %>
+                                    <button><i class="fa fa-trash color-gray"></i></button>
+                                </td>
+                            </tr>
+                          <% end %>
+
+                            <tr>
+                                <td>Zabežpečaný úver</td>
+                                <td>Karel Kopfrkingl</td>
+                                <td>10. 12. 2016</td>
+                                <td><b class="color-green">Schválené</b></td>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                <td>Kontokorent</td>
+                                <td>Paní Beáta</td>
+                                <td>9. 12. 2016</td>
+                                <td><b class="color-red">Zamietnuté</b></td>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                <td>Nezabezpečaný úvar</td>
+                                <td>Franta Vomáčka</td>
+                                <td>7. 12. 2016</td>
+                                <td><b class="color-yellow">Čaká na dokumenty</b></td>
+                                <td>
+                                    <button><i class="fa fa-pencil" onClick="alert('nevzťahuje sa na demo')" ></i></button>
+                                    <button><i class="fa fa-trash color-gray"></i></button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Zabezpečaný úvar</td>
+                                <td>Josef Mrkvička</td>
+                                <td>6. 12. 2016</td>
+                                <td><b>Zažiadaný</b></td>
+                                <td>
+                                    <!-- Linkt to loan settings -->
+                                    <button><i class="fa fa-pencil" onClick="alert('nevzťahuje sa na demo')" ></i></button>
+                                    <!-- delete loan - only if loan is not completed  (approved / rejected) -->
+                                    <button><i class="fa fa-trash color-gray"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table> <!-- /.expanded-table -->
+  </div> <!-- /.panel-content -->
+</div> <!-- /.panel -->

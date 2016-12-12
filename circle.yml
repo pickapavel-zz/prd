@@ -1,0 +1,17 @@
+machine:
+  ruby:
+    version: ruby-2.3.0
+  environment:
+    RACK_ENV: test
+    RAILS_ENV: test
+  timezone: Europe/Prague
+
+dependencies:
+  pre:
+    - gem install bundler
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - bundle exec cap staging deploy

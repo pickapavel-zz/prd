@@ -1,0 +1,443 @@
+<div class="col-10">
+    <div class="panel-content bordered m-b-30">
+        <div class="panel panel-clean panel-tabs pup-type">
+            <ul class="tabs">
+                <li class="active">
+                    <a href="#tab1">Refinancovanie</a>
+                </li>
+
+                <li>
+                    <a href="#tab2">Nový úver</a>
+                </li>
+
+                <li>
+                    <a href="#tab3">Kampaňové ponúky</a>
+                </li>
+
+                <li>
+                    <a href="#tab4">Prolongácie</a>
+                </li>
+            </ul>
+
+            <div id="tab1">
+                <div class="panel-content bordered fw bi">
+                    <input id="ref" type="checkbox">
+                    <label for="ref" class="checkbox">
+                        <h3>Refinancovať</h3>
+                    </label>
+
+                    <form action="" class="form-boxed">
+                        <div class="panel-content col-6 bordered">
+                            <div class="cf">
+                                <div class="col-6 form-group p-l-0">
+                                    <label for="">Celkově čerpané úspory&nbsp;(&euro;)</label>
+                                    <input class="input-default" type="number" value="100000" />
+                                </div>
+
+                                <div class="col-6 form-group">
+                                    <label for="">Z toho u <b>Tatra Banky</b>&nbsp;(&euro;)</label>
+                                    <input class="input-default" type="number" value="100000" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-content col-6 bordered">
+                            <div class="cf">
+                                <div class="col-6 form-group p-l-0">
+                                    <label for="">Celkově mesačné splátky&nbsp;(&euro;)</label>
+                                    <input class="input-default" type="number" name="limit-cal" id="limit-cal" />
+                                </div>
+
+                                <div class="col-6 form-group">
+                                    <label for="">Z toho u <b>Tatra Banky</b>&nbsp;(&euro;)</label>
+                                    <input class="input-default" type="number" value="2000" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="tab2">
+                <div class="panel-content bordered fw">
+                    <input id="safe" type="checkbox">
+                    <label for="safe" class="checkbox">
+                        <h3>Splátkový úver<br /><small><b>So</b> zabezpečením</small></h3>
+                    </label>
+
+                    <form class="form-boxed">
+                        <div class="cf">
+                            <div class="form-group col-2">
+                                <label>Limit&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="200000" id="inst-with-security" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splatnosť&nbsp;(mesiacov)</label>
+                                <input class="input-default" type="number" value="36"/>
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Úrok&nbsp;(%)</label>
+                                <input class="input-default" type="text" value="12%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splátka&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="3000" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>RPSN&nbsp;(%)</label>
+                                <input class="input-default" type="text" value="13%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>&nbsp;</label>
+                                <ul class="group-submenu-button dropit">
+                                    <li class="dropit-trigger">
+                                        <button type="button" class="btn btn-default"><b>Podmienky</b> <i class="fa fa-chevron-down"></i></button>
+                                        <ul class="button-submenu position-bottom-center dropit-submenu" style="display: none;">
+                                            <li>Some terms item</li>
+                                            <li>Other term</li>
+                                            <li>Lore ipsum dolor sin ameth</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cf">
+                            <div class="form-group col-4 p-b-0">
+                                <label>Zabezpečenie</label>
+                                <input class="input-default" type="text" value="Dom" />
+                            </div>
+
+                            <div class="form-group col-4 p-b-0">
+                                <label>Účel</label>
+                                <input class="input-default" type="text" value="modernizacia"/>
+                            </div>
+
+                            <div class="form-group col-4 p-b-0">
+                                <label>Zdroj splacania</label>
+                                <input class="input-default" type="text" value="Príjem" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="panel-content bordered fw">
+                    <input id="unsafe" type="checkbox">
+                    <label for="unsafe" class="checkbox">
+                        <h3>
+                            Splátkový úver<br />
+                            <small><b>Bez</b> zabezpečení</small>
+                        </h3>
+                    </label>
+
+                    <form class="form-boxed">
+                        <div class="cf">
+                            <div class="form-group col-2">
+                                <label>Limit&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="135000" id="inst-without-security" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splatnosť&nbsp;(mesiacov)</label>
+                                <input class="input-default" type="number" value="36"/>
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Úrok</label>
+                                <input class="input-default" type="text" value="12%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splátka&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="3000" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>RPSN</label>
+                                <input class="input-default" type="text" value="13%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>&nbsp;</label>
+                                <ul class="group-submenu-button dropit">
+                                    <li class="dropit-trigger">
+                                        <button type="button" class="btn btn-default"><b>Podmienky</b> <i class="fa fa-chevron-down"></i></button>
+                                        <ul class="button-submenu position-bottom-center dropit-submenu" style="display: none;">
+                                            <li>Some terms item</li>
+                                            <li>Other term</li>
+                                            <li>Lore ipsum dolor sin ameth</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cf">
+                            <div class="form-group col-4 col-offset-4 p-b-0">
+                                <label>Účel</label>
+                                <input class="input-default" type="text" value="modernizacia"/>
+                            </div>
+
+                            <div class="form-group col-4 p-b-0">
+                                <label>Zdroj splacania</label>
+                                <input class="input-default" type="text" value="Príjem" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="panel-content bordered fw">
+                    <input id="kontokorent" type="checkbox">
+                    <label for="kontokorent" class="checkbox">
+                        <h3>Kontokorent</h3>
+                    </label>
+
+                    <form class="form-boxed">
+                        <div class="cf">
+                            <div class="form-group col-2">
+                                <label>Limit&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="100000" id="overdraft" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splatnosť&nbsp;(mesiacov)</label>
+                                <input class="input-default" type="number" value="36"/>
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Úrok</label>
+                                <input class="input-default" type="text" value="12%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splátka&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" disabled="" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>RPSN</label>
+                                <input class="input-default" type="text" value="13%" />
+                            </div>
+
+                            <div class="form-group col-2 ">
+                                <label>&nbsp;</label>
+                                <ul class="group-submenu-button dropit">
+                                    <li class="dropit-trigger">
+                                        <button type="button" class="btn btn-default"><b>Podmienky</b> <i class="fa fa-chevron-down"></i></button>
+                                        <ul class="button-submenu position-bottom-center dropit-submenu" style="display: none;">
+                                            <li>Some terms item</li>
+                                            <li>Other term</li>
+                                            <li>Lore ipsum dolor sin ameth</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cf">
+                            <div class="form-group col-4 col-offset-4 p-b-0">
+                                <label>Účel</label>
+                                <input class="input-default" type="text" value="modernizacia"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="tab3">
+                <div class="panel-content bordered fw bi">
+                    <input id="action" type="checkbox">
+                    <label for="action" class="checkbox">
+                        <h3>
+                            Predschválený bezúčelový úver (Vianočný výpredaj)
+                        </h3>
+                    </label>
+
+                    <form class="form-boxed">
+                        <div class="cf">
+                            <div class="form-group col-2">
+                                <label>Limit&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="100000" id="pre-approved" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splatnosť&nbsp;(mesiacov)</label>
+                                <input class="input-default" type="number" value="36"/>
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Úrok</label>
+                                <input class="input-default" type="text" value="12%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splátka&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="1200" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>RPSN</label>
+                                <input class="input-default" type="text" value="13%" />
+                            </div>
+
+                            <div class="form-group col-2 ">
+                                <label>&nbsp;</label>
+                                <b>Ponúka platí do konca roka 2016</b>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="tab4">
+                <div class="panel-content bordered fw">
+                    <input id="creditcard" type="checkbox">
+                    <label for="creditcard" class="checkbox">
+                        <h3>
+                            Kreditná karta
+                        </h3>
+                    </label>
+
+                    <form class="form-boxed">
+                        <div class="cf">
+                            <div class="form-group col-2">
+                                <label>Limit&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="100000" id="credit-card" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splatnosť&nbsp;(mesiacov)</label>
+                                <input class="input-default" type="number" value="36"/>
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Úrok</label>
+                                <input class="input-default" type="text" value="12%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splátka&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" disabled="" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>RPSN</label>
+                                <input class="input-default" type="text" value="13%" />
+                            </div>
+
+                            <div class="form-group col-2 ">
+                                <label>&nbsp;</label>
+                                <b>Ponúka platí do konca roka 2016</b>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="panel-content bordered fw">
+                    <input id="kontokorentAction" type="checkbox">
+                    <label for="kontokorentAction" class="checkbox">
+                        <h3>
+                            Kontokorent
+                        </h3>
+                    </label>
+
+                    <form class="form-boxed">
+                        <div class="cf">
+                            <div class="form-group col-2">
+                                <label>Limit&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" value="100000" id="prolongation-overdraft" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splatnosť&nbsp;(mesiacov)</label>
+                                <input class="input-default" type="number" value="36"/>
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Úrok</label>
+                                <input class="input-default" type="text" value="12%" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>Splátka&nbsp;(&euro;)</label>
+                                <input class="input-default" type="number" disabled="" />
+                            </div>
+
+                            <div class="form-group col-2">
+                                <label>RPSN</label>
+                                <input class="input-default" type="text" value="13%" />
+                            </div>
+
+                            <div class="form-group col-2 ">
+                                <label>&nbsp;</label>
+                                <b>Ponúka platí do konca roka 2016</b>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-clean p-t-0">
+        <div class="cf">
+            <div class="col-2 tal">
+                <button class="btn btn-individual m-t-0">Induviduálná ponúka</button>
+            </div>
+
+            <div class="col-2 col-offset-8 tar">
+                <%= link_to 'Pokračovať', "/request_documents", class: "btn btn-default btn-huge", remote: true %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('li.loan-nav-item a').removeClass('current');
+$('li.loan-nav-item a.pup').addClass('current');
+$('li.loan-nav-item a.pup').parent().prevAll().each(function() {
+    $(this).find('.loan-nav-link').addClass('finished');
+});
+
+// tabs
+$('.panel-tabs .tabs').each(function() {
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
+    $active.parent().addClass('active');
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function() {
+        $(this.hash).hide();
+    });
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e) {
+        // Make the old tab inactive.
+        $active.parent().removeClass('active');
+        $content.hide();
+
+        // Update the variables with the new link and content
+        $active = $(this);
+        $content = $(this.hash);
+
+        // Make the tab active.
+        $active.parent().addClass('active');
+        $content.show();
+
+        // Prevent the anchor's default click action
+        e.preventDefault();
+    });
+});
+</script>

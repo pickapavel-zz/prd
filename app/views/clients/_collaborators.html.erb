@@ -1,0 +1,8 @@
+<% client.collaborators.each do |collaborator| %>
+  <tr>
+    <td><%= collaborator.name %></td>
+    <td><%= collaborator.email %></td>
+    <td><%= collaborator.team %></td>
+    <td><%= collaborator.formatted_role %></td>
+  </tr>
+<% end %>

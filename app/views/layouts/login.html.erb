@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tatra banka RFP</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
+
+</head>
+<body>
+  <div class="header">
+    <div class="logo"></div>
+
+    <div class="title">
+      <span>RFP</span>Draft
+    </div>
+
+    <div class="stamp">
+      <table>
+        <tbody>
+          <tr>
+            <td>ES</td>
+            <td class="right">EXTRA<br>SENSITIVE</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="controls">
+      <ul class="group-submenu-button dropit">
+        <li class="dropit-trigger">
+          <button><i class="fa fa-globe"></i></button>
+          <ul class="button-submenu dropit-submenu" style="display: none;">
+            <li><a href="#">slovenský</a></li>
+            <li class="divider"></li>
+            <li><a href="#">english</a></li>
+            <li><a href="#">deutsch</a></li>
+            <li><a href="#" class="disabled">русский</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div> <!-- /.header -->
+
+  <div class="container-page">
+    <div class="content">
+      <div class="panel panel-clean m-t-50">
+        <div class=" col-offset-4 col-4">
+          <div class="panel-content bordered">
+            <%= yield %>
+          </div>
+        </div> <!-- /.panel-content -->
+      </div> <!-- /.panel -->
+    </div> <!-- /.content -->
+  </div> <!-- /.container-page -->
+
+</body>
+</html>

@@ -1,0 +1,649 @@
+<%= render partial: 'clients/subheader' %>
+<div class="panel panel-clean m-t-50" id="clientInfo">
+  <%= render "clients/navigation" %>
+  <div id="main-content">
+    <div class="col-10 ">
+        <div class="panel-content bordered m-b-30">
+            <div class="panel panel-clean panel-tabs">
+                <ul class="tabs">
+                    <li class="active">
+                        <a href="#tab1">Kontaktné údaje</a>
+                        <span class="notification color-gray"><i class="fa fa-home"></i></span>
+                    </li>
+
+                    <li>
+                        <a href="#tab2">Orgány spoločnosti</a>
+                        <span class="notification color-gray"><i class="fa fa-briefcase"></i></span>
+                    </li>
+
+                    <li>
+                        <a href="#tab3">Úverová angažovanosť v TB</a>
+                        <span class="notification color-gray"><i class="fa fa-money"></i></span>
+                    </li>
+
+                    <li>
+                        <a href="#tab4">Finančné ukazovatele</a>
+                        <span class="notification color-gray"><i class="fa fa-tachometer"></i></span>
+                    </li>
+                </ul>
+
+                <div>
+                    <div id="tab1">
+                        <%= form_for @client, html: { class: "form-boxed" } do |f| %>
+                            <fieldset>
+                                <div class="p-l-20">
+                                    <h3>Základné info (<%= @client.non_customer ? "Non Customer mode" : "Customer mode" %>)</h3>
+                                </div>
+
+                                <div class="cf">
+                                    <div class="form-group col-4">
+                                        <!-- TODO IČO or RČ (birth number) -->
+                                        <label class="required" for="">IČO / RČ</label>
+                                        <%= f.text_field :ic, class: "input-default" %>
+                                    </div>
+                                    <!-- TODO only IČO -->
+                                    <div class="form-group col-4">
+                                        <label class="required" for="">Názov</label>
+                                        <%= f.text_field :title, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-4">
+                                        <%= f.label :legal_form, "Právná forma" %>
+                                        <%= f.text_field :legal_form, class: "input-default" %>
+                                    </div>
+                                </div>
+
+                                <div class="cf">
+                                    <!-- TODO only RČ (birth number) -->
+                                    <div class="form-group col-4 col-offset-4">
+                                        <label class="required" for="">Meno</label>
+                                        <%= f.text_field :name, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-4">
+                                        <label class="required" for="">Priezvisko</label>
+                                        <%= f.text_field :surname, class: "input-default" %>
+                                    </div>
+                                </div>
+
+                                <div class="cf">
+                                    <div class="form-group col-4">
+                                        <label class="required" for="">Stav</label>
+                                        <%= f.text_field :condition, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-4">
+                                        <label class="required" for="">Hlavný predmet činnosti</label>
+                                        <%= f.text_field :core_business, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-4">
+                                        <label class="required" for="">Dátum zápisu do registra</label>
+                                        <%= f.text_field :registration_date, value: (f.object.registration_date.strftime("%d.%m.%Y") if f.object.registration_date), class: "input-default" %>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="m-t-15">
+                                <div class="p-l-20">
+                                    <h3>Sídlo spoločnosti</h3>
+                                </div>
+
+                                <div class="cf">
+                                    <div class="form-group col-4">
+                                        <%= f.label :street, "Ulica", class: "required" %>
+                                        <%= f.text_field :street, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-4">
+                                        <%= f.label :city, "Mesto", class: "required" %>
+                                        <%= f.text_field :city, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <%= f.label :zip, "PSČ", class: "required" %>
+                                        <%= f.text_field :zip, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <%= f.label :country, "Štát", class: "required" %>
+                                        <%= f.text_field :country, class: "input-default" %>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="m-t-15">
+                                <div class="p-l-20">
+                                    <h3>Kontaktná osoba</h3>
+                                </div>
+
+                                <div class="cf">
+                                    <div class="form-group col-2">
+                                        <label for="contactName" class="required">Meno</label>
+                                        <input type="text" class="input-default" value="Jan" id="contactName" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label for="contactSurname" class="required">Priezvisko</label>
+                                        <input type="text" class="input-default" value="Skoupý" id="contactSurname" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label for="contactEmail" class="required">email</label>
+                                        <input type="text" class="input-default" value="jan.skoupy@tatrabanka.sk" id="contactEmail" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label for="contactPhone" class="required">Telefon</label>
+                                        <input type="text" class="input-default" value="+420775160160" id="contactPhone" />
+                                    </div>
+
+                                    <div class="form-group col-4">
+                                        <label for="contactAddress" class="required">Kontaktná adresa</label>
+                                        <input type="text" class="input-default" value="Černyševského 378/16, Bratislava" id="contactAddress" />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="m-t-15">
+                                <div class="p-l-20">
+                                    <h3>Klient Tatra banky</h3>
+                                </div>
+
+                                <div class="cf">
+                                    <div class="form-group col-2">
+                                        <label class="required" for="">ID klienta</label>
+                                        <%= f.text_field :record_id, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label class="required" or="">Segment</label>
+                                        <%= f.text_field :segment, class: "input-default" %>
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label class="required" or="">Segment Type</label>
+                                        <%= f.text_field :segment_type, value: @client.segment_type, class: "input-default" %>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-group m-t-15">
+                              <%= f.submit "Uložiť", class: "btn btn-default" %>
+                            </div>
+                        <% end %> <!-- /.form-boxed -->
+                    </div><!-- /#tab1 -->
+
+                    <div id="tab2">
+                        <%= form_for @client, html: { class: "form-boxed" } do |f| %>
+                            <fieldset>
+                                <div class="p-l-20">
+                                    <h3>Hlavná osoba</h3>
+                                </div>
+
+                                <div class="cf">
+                                    <!-- current Main person -->
+                                    <!-- Pls split name and surname   -->
+                                    <div class="form-group col-2">
+                                        <%= f.label :name, "Meno", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label class="required" for="">Priezvisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Vomáčka' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <!-- birth number -->
+                                        <%= f.label :name, "Rodné číslo", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-3">
+                                        <!-- Address - Street, City, ZIP code -->
+                                        <label class="required" for="">Trvalé bydlisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'CZE' %>" />
+                                    </div>
+
+                                    <div class="form-group col-1">
+                                        <!-- Share% -->
+                                        <label class="required" for="">Podiel</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : '25%' %>" />
+                                    </div>
+                                </div>
+
+                                <div class="p-l-20 m-t-20">
+                                    <h3>Spoločníci</h3>
+                                </div>
+
+                                <div class="cf">
+                                    <!-- Pls split name and surname   -->
+                                    <div class="form-group col-2">
+                                        <%= f.label :name, "Meno", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label class="required" for="">Priezvisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Vomáčka' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <!-- birth number -->
+                                        <%= f.label :name, "Rodné číslo", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-3">
+                                        <!-- Address - Street, City, ZIP code -->
+                                        <label class="required" for="">Trvalé bydlisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'CZE' %>" />
+                                    </div>
+
+                                    <div class="form-group col-1">
+                                        <!-- Share% -->
+                                        <label class="required" for="">Podiel</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : '25%' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2 tar">
+                                        <label>&nbsp;</label>
+                                        <!-- Set as a main person -->
+                                        <button class="btn btn-default">Nastavit ako hlavnú osobu</button>
+                                    </div>
+                                </div>
+
+                                <div class="cf">
+                                    <!-- Pls split name and surname   -->
+                                    <div class="form-group col-2">
+                                        <%= f.label :name, "Meno", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label class="required" for="">Priezvisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Vomáčka' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <!-- birth number -->
+                                        <%= f.label :name, "Rodné číslo", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-3">
+                                        <!-- Address - Street, City, ZIP code -->
+                                        <label class="required" for="">Trvalé bydlisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'CZE' %>" />
+                                    </div>
+
+                                    <div class="form-group col-1">
+                                        <!-- Share% -->
+                                        <label class="required" for="">Podiel</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : '25%' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2 tar">
+                                        <label>&nbsp;</label>
+                                        <button class="btn btn-default">Nastavit ako hlavnú osobu</button>
+                                    </div>
+                                </div>
+
+                                <div class="cf">
+                                    <!-- Pls split name and surname   -->
+                                    <div class="form-group col-2">
+                                        <%= f.label :name, "Meno", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <label class="required" for="">Priezvisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Vomáčka' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2">
+                                        <!-- birth number -->
+                                        <%= f.label :name, "Rodné číslo", class: "required" %>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'Peter' %>" />
+                                    </div>
+
+                                    <div class="form-group col-3">
+                                        <!-- Address - Street, City, ZIP code -->
+                                        <label class="required" for="">Trvalé bydlisko</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : 'CZE' %>" />
+                                    </div>
+
+                                    <div class="form-group col-1">
+                                        <!-- Share% -->
+                                        <label class="required" for="">Podiel</label>
+                                        <input type="text" class="input-default" value="<%= @client.fake? ? '' : '25%' %>" />
+                                    </div>
+
+                                    <div class="form-group col-2 tar">
+                                        <label>&nbsp;</label>
+                                        <button class="btn btn-default">Nastavit ako hlavnú osobu</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-group">
+                                <button class="btn btn-default">Uložiť</button>
+                            </div>
+                        <% end %> <!-- /.form-boxed -->
+                    </div><!-- /#tab2 -->
+
+                    <div id="tab3">
+                        <table class="table-default" style="background-color: #fff;">
+                            <thead>
+                                <tr>
+                                    <th>Produkt</th>
+                                    <th>Uživatěľ</th>
+                                    <th>Posledná úprava</th>
+                                    <th>Status</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Zabezpečený úver</td>
+                                    <td>Karel Kopfrkingl</td>
+                                    <td>10. 12. 2016</td>
+                                    <td><b class="color-green">Schválené</b></td>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Kontokorent</td>
+                                    <td>Paní Beáta</td>
+                                    <td>9. 12. 2016</td>
+                                    <td><b class="color-red">Zamietnuté</b></td>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Nezabezpečený úver</td>
+                                    <td>Franta Vomáčka</td>
+                                    <td>7. 12. 2016</td>
+                                    <td><b class="color-yellow">Čaká na dokumenty</b></td>
+                                    <td>
+                                        <button><i class="fa fa-pencil"></i></button>
+                                        <button><i class="fa fa-trash color-gray"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Zabezpečený úver</td>
+                                    <td>Josef Mrkvička</td>
+                                    <td>6. 12. 2016</td>
+                                    <td><b>Zažiadaný</b></td>
+                                    <td>
+                                        <button><i class="fa fa-pencil"></i></button>
+                                        <button><i class="fa fa-trash color-gray"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table> <!-- /.expanded-table -->
+                    </div> <!--/#tab3 -->
+
+                    <div id="tab4" class="with-overlay">
+                        <div class="overlay"></div>
+                        <form action="" class="form-boxed p-l-10 p-r-10">
+                            <table class="table-default table-large-num th-left">
+                                <thead>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <th>2013&nbsp;-&nbsp;&euro;</th>
+                                        <th>2014&nbsp;-&nbsp;&euro;</th>
+                                        <th>2015&nbsp;-&nbsp;&euro;</th>
+                                        <th>2016&nbsp;(priebežné)&nbsp;-&nbsp;&euro;</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Výnosy z hospodárskej činnosti <br /> spolu súčet&nbsp;<span class="color-gray">(riadok 2)</span></td>
+                                        <td><input type="number" class="input-default" value="215865"></td>
+                                        <td><input type="number" class="input-default" value="315865"></td>
+                                        <td><input type="number" class="input-default" value="415865"></td>
+                                        <td><input type="number" class="input-default"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Tržby z predaja tovaru&nbsp;<span class="color-gray">(riadok 3)</span></td>
+                                        <td><input type="number" class="input-default" value="25486" /></td>
+                                        <td><input type="number" class="input-default" value="32122" /></td>
+                                        <td><input type="number" class="input-default" value="35751" /></td>
+                                        <td><input type="number" class="input-default" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Tržby z predaja vlastných výrobkov&nbsp;<span class="color-gray">(riadok 4)</span></td>
+                                        <td><input type="number" class="input-default" value="75145"  /></td>
+                                        <td><input type="number" class="input-default" value="83987" /></td>
+                                        <td><input type="number" class="input-default" value="58741" /></td>
+                                        <td><input type="number" class="input-default" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Tržby z predaja služieb&nbsp;<span class="color-gray">(riadok 5)</span></td>
+                                        <td><input type="number" class="input-default" value="6" /></td>
+                                        <td><input type="number" class="input-default" value="6" /></td>
+                                        <td><input type="number" class="input-default" value="6" /></td>
+                                        <td><input type="number" class="input-default" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Zmeny stavu vnútroorganizačných zásob (+/-)<br /><span class="color-gray">(účtová skupina 61) (riadok 6)</span></td>
+                                        <td><input type="number" class="input-default" value="-6875" /></td>
+                                        <td><input type="number" class="input-default" value="6875" /></td>
+                                        <td><input type="number" class="input-default" value="6875" /></td>
+                                        <td><input type="number" class="input-default" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Aktivácia&nbsp;<span class="color-gray">(účtová skupina 62) (riadok 7)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Tržby z predaja dlhodobého nehmotného majetku,<br />dlhodobého hmotného majetku a materiálu&nbsp;<span class="color-gray">(riadok 7)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Náklady na hospodársku činnosť spolu&nbsp;<span class="color-gray">(riadok 10)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Opravné položky k zásobám&nbsp;<span class="color-gray">(riadok 13)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Odpisy dlhodobého nehmotného a dlhodobého <br /> hmotného majetku&nbsp;<span class="color-gray">(riadok 22)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Opravné položky k dlhodobému nehmotnému<br />majetku a dlhodobému hmotnému majetku&nbsp;<span class="color-gray">(riadok 23)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Zostatková cena predaného dlhodobého majetku <br /> a predaného materiálu&nbsp;<span class="color-gray">(riadok 24)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Opravné položky k pohľadávkam&nbsp;<span class="color-gray">(riadok 25)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Výsledok hospodárenia z hospodárskej činnost&nbsp;<span class="color-gray">(riadok 27 = 2 - 10)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Pridaná hodnota&nbsp;<span class="color-gray">(riadok 28)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Výnosy z finančnej činnosti spolu&nbsp;<span class="color-gray">(riadok 29)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Náklady na finančnú činnosť spolu&nbsp;<span class="color-gray">(riadok 45)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Výsledok hospodárenia z finančnej činnost&nbsp;<span class="color-gray">(riadok 55 = 29 - 45)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Výsledok hospodárenia za účtovné obdobie<br /> pred zdanením&nbsp;<span class="color-gray">(riadok 56 = 27 + 55)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Výsledok hospodárenia za účtovné obdobie<br /> po zdanení&nbsp;<span class="color-gray">(riadok 61)</span></td>
+                                        <td><input type="number" class="input-default" value="1235" /></td>
+                                        <td><input type="number" class="input-default" value="6789" /></td>
+                                        <td><input type="number" class="input-default" value="1123" /></td>
+                                        <td><input type="number" class="input-default"  /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button class="btn btn-default">Uložiť</button>
+                        </form>
+                    </div> <!-- /#tab4 -->
+                </div> <!-- /.panel-content -->
+            </div> <!-- /.panel.panel-clean -->
+        </div> <!-- /.panel-content -->
+
+        <div class="m-t-15 padding-10">
+            <div class="col-2 col-offset-10 tar">
+                <%= link_to 'Pokračovať', "/pup", class: "btn btn-default btn-huge", remote: true %>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-10 col-offset-2">
+        <div class="p-l-20 m-t-50">
+            <h2>Ekonomicky prepojená skupina</h2>
+        </div>
+        <% if !@client.fake? && @client.gnosus.related_subjects.blank? && @client.partners.blank? %>
+          <div class="panel-content bordered">
+            Žiadne ekonomicky prepojené spoločnosti neboli nájdené
+          </div>
+        <% else %>
+          <% if !@client.fake? %>
+            <% @client.gnosus.related_subjects.each do |related_subject| %>
+              <%= render partial: 'related_subject', locals: {related_subject: related_subject} %>
+            <% end %>
+          <% end %>
+          <% @client.partners.each do |partner| %>
+            <%= render partial: 'partner', locals: {partner: partner} %>
+          <% end %>
+        <% end %>
+        <!-- Add Compamny into the related companies list -->
+
+        <div class="col-6 col-offset-3">
+          <div class="panel-content">
+            <div class="panel-content bordered" id="addCompanyForm" style="display: none;">
+              <h2 class="h2-with-icon">
+                Identifikácia klienta
+              </h2>
+              <%= form_for @client, url: add_partner_client_path(@client), html: { class: "form-boxed" } do |f| %>
+                <div class="form-group">
+                  <label class="required tal" for="client">IČ/RČ</label>
+                  <%= f.text_field :partner_ic, type: "number", class: 'input-default', id: "client", type: "number" %>
+                  <span class="help-block" style="display: none;"></span>
+                </div>
+
+                <div class="form-group m-t-10">
+                    <%= f.submit "Uložiť", class: 'btn btn-default' %>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="tac">
+                <a class="btn btn-default" id="addCompanyTrigger">Pridať spoločnosť</a>
+            </div>
+          </div>
+        </div>
+    </div> <!-- /.panel-content -->
+  </div>
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+          var $financials = $('#tab4');
+          var $overlay = $financials.find('.overlay');
+          $overlay.css({
+              opacity: 0.4,
+              display: 'block'
+          });
+          alertify.notify('<div class="spinner">Sťahujú sa finančné výkazy</div>', 'neutral', 15, function() {
+              alertify.notify('<i class="fa fa-check"></i>Sťahovanie dokončené', 'success', 5);
+              $overlay.animate({
+                  opacity: 0
+              }, 800, function(){
+                $overlay.css('display', 'none');
+              });
+          });
+      });
+  </script>
+</div> <!-- /.panel.panel-clean -->
+
+<div class="push">
+</div>

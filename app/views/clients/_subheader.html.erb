@@ -1,0 +1,115 @@
+<div class="subheader">
+    <div class="panel panel-subheader">
+        <div class="panel-content">
+            <table class="table-info">
+                <tbody>
+                    <tr>
+                        <th>Názov spoločnosti</th>
+                        <th>IČ</th>
+                        <th>Predschválené</th>
+                        <th>Čiastka</th>
+                        <th>Produkt</th>
+                        <th>Hard KO kritéria</th>
+                        <th>Soft KO Kritéria</th>
+                        <th>Stav</th>
+                    </tr>
+                    <tr>
+                        <td><b><%= @client.name %></b></td>
+
+                        <td><%= @client.ic %></td>
+                        <!-- Katalogova ponuka, Prolongacia - Catalog offer - Stefan should tell - but it is not for every client -->
+                        <td>
+                            <a class="offer offer-green offer-purple tooltip position-bottom-right" href="#tooltip">K<span>Kampaňová ponúka - klient má predschválený úver</span></a>&nbsp;
+                            <a class="offer offer-yellow tooltip position-bottom-right" href="#tooltip">P<span>Prologacia - klient má možnost prolongácie</span></a>
+                        </td>
+                        <!-- How much money client wants -->
+                        <td><b>--&nbsp;&euro;</b></td>
+                        <!-- Type of finanacial product -->
+                        <td><b>--</b></td>
+                        <td>
+                          <% if @client.ic == "36431371" %>
+                              <button type="button" class="btn btn-green active"><b>OK</b></button>
+                          <% else %>
+                            <ul class="group-submenu-button dropit">
+                                <!-- HARD KO - not every KO reason can be shown to user -->
+                                <li class="dropit-trigger">
+                                    <button type="button" class="btn btn-red"><b>Nieje možné požičať</b> <i class="fa fa-chevron-down"></i></button>
+                                    <ul class="button-submenu position-bottom-center dropit-submenu ko-list" style="display: none;">
+                                        <li class="cf">
+                                            <i class="fa fa-times-circle col-1 color-red"></i>
+                                            <span class="col-11">
+                                                <b>Súdny spor</b>
+                                                <a href="#tooltip" class="tooltip position-top-left">
+                                                    <span>Duis ultrices risus sed nulla tincidunt, vel finibus nibh hendrerit. Ut venenatis sapien nec leo sagittis, malesuada lacinia tortor commodo. Nunc facilisis, lorem vel tempor iaculis, purus turpis auctor lacus, vel scelerisque magna nibh et lacus.</span>
+                                                </a>
+                                            </span>
+                                        </li>
+
+                                        <li class="cf">
+                                            <i class="fa fa-times-circle col-1 color-red"></i>
+                                            <span class="col-11">
+                                                <b>Platobná disciplína</b>
+                                                <a href="#tooltip" class="tooltip position-top-left">
+                                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta lectus lorem, <b>quis elementum</b> ligula varius mattis. Mauris sit amet libero leo.</span>
+                                                </a>
+                                            </span>
+                                        </li>
+
+                                        <li class="cf">
+                                            <i class="fa fa-times-circle col-1 color-red"></i>
+                                            <b class="col-11">Porušené KO
+                                                <a href="#tooltip" class="tooltip position-top-left">
+                                                    <span>Klient je podezřelý ze spáchání trestného činnu zpronevěry dle <b>Zákona č. 379/2005 Sb.</b>.</span>
+                                                </a>
+                                            </b>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                          <% end %>
+                        </td>
+                        <td>
+                             <ul class="group-submenu-button dropit">
+                                <li class="dropit-trigger">
+                                    <button type="button" class="btn btn-yellow"><b>Problém v soft KO</b> <i class="fa fa-chevron-down"></i></button>
+                                    <ul class="button-submenu position-bottom-center dropit-submenu ko-list" style="display: none;">
+                                        <li class="cf">
+                                            <i class="fa fa-exclamation-circle col-1 color-yellow"></i>
+                                            <span class="col-11">
+                                                <b>Súdný spor</b>
+                                                <a href="#tooltip" class="tooltip position-top-left">
+                                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta lectus lorem, <b>quis elementum</b> ligula varius mattis. Mauris sit amet libero leo.</span>
+                                                </a>
+                                            </span>
+                                        </li>
+
+                                        <li class="cf">
+                                            <i class="fa fa-exclamation-circle col-1 color-yellow"></i>
+                                            <span class="col-11">
+                                                <b>Platobná disciplína</b>
+                                                <a href="#tooltip" class="tooltip position-top-left">
+                                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta lectus lorem, <b>quis elementum</b> ligula varius mattis. Mauris sit amet libero leo.</span>
+                                                </a>
+                                            </span>
+                                        </li>
+
+                                        <li class="cf">
+                                            <i class="fa fa-exclamation-circle col-1 color-yellow"></i>
+                                            <span class="col-11">
+                                                <b>Akceptovateľnosť odvetvia a zabezpečenia</b>
+                                                <a href="#tooltip" class="tooltip position-top-left">
+                                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta lectus lorem, <b>quis elementum</b> ligula varius mattis. Mauris sit amet libero leo.</span>
+                                                </a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td><b>State</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> <!-- /.panel-content -->
+    </div> <!-- /.panel-subheader -->
+</div> <!-- /.subheader -->

@@ -1,0 +1,76 @@
+<div class="panel-content col-2">
+    <div class="app-nav">
+        <div class="panel panel-clean panel-tabs">
+            <ul class="tabs cf">
+                <li class="active">
+                  <%= link_to "Navigácia", (@client.persisted? ? @client : '#'), class: "colab-nav-link" %>
+                </li>
+                <li>
+                    <%= link_to (@client.persisted? ? coworkers_client_path(@client) : '#colab'), remote: true, class: "colab-nav-link" do %>
+                        Spoluprácia
+                    <% end %>
+                </li>
+            </ul>
+
+            <div class="tabs-content">
+                <div id="stepper">
+                    <nav class="loan-nav">
+                        <ul class="loan-nav-list">
+                          <li class="loan-nav-item">
+                            <a href="<%= new_client_path %>" class="loan-nav-link <%= 'current' if params[:action] == 'new' || params[:action] == 'create' %>">
+                              <span class="loan-nav-step">1</span>
+                              <span class="loan-nav-text">Identifikácia klienta</span>
+                            </a>
+                          </li>
+
+                          <li class="loan-nav-item">
+                            <%= link_to (@client.persisted? ? @client : '#'), class: "loan-nav-link #{'current' if params[:action] == 'show'}" do %>
+                              <span class="loan-nav-step">2</span>
+                              <span class="loan-nav-text">Základné informacie</span>
+                            <% end %>
+                          </li>
+
+                          <li class="loan-nav-item">
+                            <a href="<%= pup_path %>" class="loan-nav-link pup">
+                              <span class="loan-nav-step">3</span>
+                              <span class="loan-nav-text">Predbežná úverová ponuka</span>
+                            </a>
+                          </li>
+
+                          <li class="loan-nav-item">
+                            <a href="<%= request_documents_path %>" class="loan-nav-link">
+                              <span class="loan-nav-step">4</span>
+                              <span class="loan-nav-text">Žiadost a dokumenty</span>
+                            </a>
+                          </li>
+
+                          <li class="loan-nav-item">
+                            <a href="<%= documents_check_path %>" class="loan-nav-link">
+                              <span class="loan-nav-step">5</span>
+                              <span class="loan-nav-text">Kontrola dokumentov</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div id="colab">
+                    <nav class="colab-nav">
+                        <ul class="colab-nav-list">
+                            <li class="colab-nav-item">
+                                <%= link_to (@client.persisted? ? coworkers_client_path(@client) : '#'), remote: true, class: "colab-nav-link" do %>
+                                    <i class="fa fa-user m-r-5"></i>Spolupracovníci
+                                <% end %>
+                            </li>
+                            <li class="colab-nav-item">
+                                <%= link_to (@client.persisted? ? history_client_path(@client) : '#'), remote: true, class: "colab-nav-link" do %>
+                                    <i class="fa fa-clock-o m-r-5"></i>História zmen
+                                <% end %>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

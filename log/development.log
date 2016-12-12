@@ -1,0 +1,1683 @@
+Started GET "/" for 127.0.0.1 at 2016-12-12 09:47:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (4.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.1) lib/rack/handler/webrick.rb:86:in `service'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1627130768258036265);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCollaborations (20161212064256)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE "collaborations" ("id" serial primary key, "client_id" integer, "collaborator_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161212064256"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToUsers (20161212071910)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.3ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer DEFAULT 0[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "team" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161212071910"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFakeUsers (20161212072009)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Jan.skoupy@tatrabanka.sk"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "role", "team") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jan Skoupý"], ["email", "Jan.skoupy@tatrabanka.sk"], ["password_digest", "$2a$10$KFn5ol/WcbllFQoE83pPFOP/yygGgzHt2S0Ct.hrONnRecpbDNbCO"], ["created_at", 2016-12-12 08:48:18 UTC], ["updated_at", 2016-12-12 08:48:18 UTC], ["role", 1], ["team", "quality"]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "richa.bhardwaj@tatrabanka.sk"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "team") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Richa Bhardwaj"], ["email", "richa.bhardwaj@tatrabanka.sk"], ["password_digest", "$2a$10$uiCygB.rFYms711i0Zd0z.9GngMZFhrkl5iktLCcwB2wYyhEa48Lu"], ["created_at", 2016-12-12 08:48:18 UTC], ["updated_at", 2016-12-12 08:48:18 UTC], ["team", "quality"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161212072009"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1627130768258036265)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'clients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'collaborations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'corporates'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'financial_indicators'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'interface_caches'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'loan_applications'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'partnerships'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for 127.0.0.1 at 2016-12-12 09:48:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 36ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2016-12-12 09:48:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered layouts/_flash.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/login (6.8ms)
+Completed 200 OK in 531ms (Views: 528.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-12-12 09:49:07 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3fqw834ltXYDLnJFnuA3gGX4p85tTXdv1scjeJ+cgBvXXxamO6C875/RHI2o0UIHYblSNXi8ummnA8Rk/65X8Q==", "email"=>"pickapavel@centrum.cz", "password"=>"[FILTERED]", "commit"=>"Prihlásit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pickapavel@centrum.cz"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/clients/new
+Completed 302 Found in 79ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-12-12 09:49:07 +0100
+Processing by ClientsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_navigation.html.erb (4.3ms)
+  Rendered clients/new.html.erb within layouts/application (45.1ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 219ms (Views: 89.1ms | ActiveRecord: 10.1ms)
+
+
+Started POST "/clients" for 127.0.0.1 at 2016-12-12 09:49:23 +0100
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FBH14NR9UtG3UK/FQleFILiJy7FID15Jab5tWRuzt4BNFyRaih/7//2k5pdf8EMpae4eCWDBcIOeKN67O689uQ==", "client"=>{"ic"=>"10756159", "non_customer"=>"0"}, "commit"=>"Vyhladať klienta"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: non_customer
+  [1m[36mClient Load (2.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."ic" = $1 ORDER BY "clients"."id" ASC LIMIT $2[0m  [["ic", "10756159"], ["LIMIT", 1]]
+Unpermitted parameter: ic
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "collaborations" ON "users"."id" = "collaborations"."collaborator_id" WHERE "collaborations"."client_id" = $1[0m  [["client_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "pickapavel@centrum.cz"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "collaborations" ("client_id", "collaborator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["client_id", 2], ["collaborator_id", 1], ["created_at", 2016-12-12 08:49:23 UTC], ["updated_at", 2016-12-12 08:49:23 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/clients/2
+Completed 302 Found in 89ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 09:49:23 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  [1m[36mInterfaceCache Load (3.8ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (7.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (74.3ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 99ms (Views: 78.2ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:06:02 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.5ms)
+  Rendered clients/_navigation.html.erb (2.2ms)
+  [1m[36mInterfaceCache Load (0.8ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (21.5ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:07:20 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.3ms)
+  [1m[36mInterfaceCache Load (0.8ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 45ms (Views: 39.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:07:23 +0100
+Processing by ClientsController#pup as JS
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.js.erb
+  Rendered clients/_pup.html.erb (1.1ms)
+  Rendered clients/pup.js.erb (5.5ms)
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:07:28 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.4ms)
+  Rendered clients/_navigation.html.erb (1.0ms)
+  [1m[36mInterfaceCache Load (0.6ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_flash.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:07:53 +0100
+Processing by ClientsController#pup as JS
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.js.erb
+  Rendered clients/_pup.html.erb (0.9ms)
+  Rendered clients/pup.js.erb (4.1ms)
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:07:56 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (0.9ms)
+  [1m[36mInterfaceCache Load (0.6ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:09:31 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.0ms)
+  Rendered clients/_pup.html.erb (0.8ms)
+  Rendered clients/pup.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:09:37 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.4ms)
+  Rendered clients/_navigation.html.erb (1.0ms)
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:10:31 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:10:51 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.0ms)
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:10:56 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.9ms)
+  Rendered clients/_navigation.html.erb (1.4ms)
+  Rendered clients/_pup.html.erb (1.1ms)
+  Rendered clients/pup.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:10:58 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (0.9ms)
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:11:18 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (1.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/pup.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:12:07 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (1.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.0ms)
+  Rendered clients/_navigation.html.erb (1.6ms)
+  Rendered clients/_pup.html.erb (0.8ms)
+  Rendered clients/pup.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:13:52 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.4ms)
+  Rendered clients/_navigation.html.erb (1.0ms)
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-12-12 11:14:08 +0100
+Processing by ClientsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_navigation.html.erb (2.6ms)
+  Rendered clients/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/clients" for 127.0.0.1 at 2016-12-12 11:14:15 +0100
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V4AphxSajao0WJBmrZcisHgXlFViimjlfA5KLV9zlFUOhvg9SvgkhH6s2TSwMOS5qXBB7UpERi+LmPnPf28ebA==", "client"=>{"ic"=>"10756159", "non_customer"=>"0"}, "commit"=>"Vyhladať klienta"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: non_customer
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."ic" = $1 ORDER BY "clients"."id" ASC LIMIT $2[0m  [["ic", "10756159"], ["LIMIT", 1]]
+Unpermitted parameter: ic
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "collaborations" ON "users"."id" = "collaborations"."collaborator_id" WHERE "collaborations"."client_id" = $1[0m  [["client_id", 2]]
+Redirected to http://localhost:3000/clients/2
+Completed 302 Found in 16ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:14:15 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.1ms)
+  Rendered clients/_navigation.html.erb (1.7ms)
+  [1m[36mInterfaceCache Load (1.2ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:14:33 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.3ms)
+  Rendered clients/_navigation.html.erb (1.3ms)
+  [1m[36mInterfaceCache Load (0.7ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_flash.html.erb (0.3ms)
+Completed 200 OK in 55ms (Views: 48.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:14:55 +0100
+Processing by ClientsController#pup as JS
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.js.erb
+  Rendered clients/_pup.html.erb (0.9ms)
+  Rendered clients/pup.js.erb (4.1ms)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:25:51 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.7ms)
+  Rendered clients/_navigation.html.erb (2.0ms)
+  [1m[36mInterfaceCache Load (0.6ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 41.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:26:17 +0100
+Processing by ClientsController#pup as JS
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.js.erb
+  Rendered clients/_pup.html.erb (0.9ms)
+  Rendered clients/pup.js.erb (4.7ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:26:37 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  [1m[36mInterfaceCache Load (0.7ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:28:24 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.8ms)
+  Rendered clients/_navigation.html.erb (11.0ms)
+  [1m[36mInterfaceCache Load (0.6ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 52.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:28:28 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.5ms)
+  [1m[36mInterfaceCache Load (0.6ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:28:31 +0100
+Processing by ClientsController#pup as JS
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.js.erb
+  Rendered clients/_pup.html.erb (0.8ms)
+  Rendered clients/pup.js.erb (3.9ms)
+Completed 200 OK in 14ms (Views: 7.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:30:52 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.2ms)
+  Rendered clients/_navigation.html.erb (1.7ms)
+  [1m[36mInterfaceCache Load (0.6ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 43.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:32:53 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.9ms)
+  Rendered clients/_navigation.html.erb (2.2ms)
+  [1m[36mInterfaceCache Load (0.7ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (24.4ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 61ms (Views: 54.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-12-12 11:32:54 +0100
+Processing by ClientsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_navigation.html.erb (0.8ms)
+  Rendered clients/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:33:01 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.7ms)
+  [1m[36mInterfaceCache Load (0.5ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:33:58 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.8ms)
+  Rendered clients/_navigation.html.erb (2.0ms)
+  [1m[36mInterfaceCache Load (1.0ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/clients/2" for 127.0.0.1 at 2016-12-12 11:34:11 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  [1m[36mInterfaceCache Load (0.5ms)[0m  [1m[34mSELECT  "interface_caches".* FROM "interface_caches" WHERE "interface_caches"."kind" = $1 AND "interface_caches"."ic" = $2 ORDER BY "interface_caches"."id" ASC LIMIT $3[0m  [["kind", 1], ["ic", "10756159"], ["LIMIT", 1]]
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (27.8ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:34:15 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.7ms)
+  Rendered clients/_navigation.html.erb (1.8ms)
+  Rendered clients/_pup.html.erb (1.0ms)
+  Rendered clients/pup.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:34:18 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.8ms)
+  Rendered clients/_navigation.html.erb (1.3ms)
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:34:19 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  Rendered clients/_pup.html.erb (0.9ms)
+  Rendered clients/pup.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_flash.html.erb (0.8ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:35:39 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.9ms)
+  Rendered clients/_navigation.html.erb (1.2ms)
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:35:42 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.8ms)
+  Rendered clients/_navigation.html.erb (3.1ms)
+  [1m[36mClient Load (1.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_flash.html.erb (1.1ms)
+Completed 200 OK in 91ms (Views: 82.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:35:43 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  Rendered clients/_pup.html.erb (0.7ms)
+  Rendered clients/pup.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_flash.html.erb (1.0ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:35:45 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.2ms)
+  Rendered clients/_navigation.html.erb (3.3ms)
+  Rendered clients/_pup.html.erb (1.5ms)
+  Rendered clients/pup.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 39.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:35:47 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.4ms)
+  Rendered clients/_navigation.html.erb (0.9ms)
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:36:36 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.2ms)
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:36:39 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (2.0ms)
+  Rendered clients/_pup.html.erb (1.0ms)
+  Rendered clients/pup.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:36:41 +0100
+  
+AbstractController::ActionNotFound (The action 'request_documents' could not be found for ClientsController):
+  
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.1) lib/rack/handler/webrick.rb:86:in `service'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.3ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:38:56 +0100
+  
+AbstractController::ActionNotFound (The action 'request_documents' could not be found for ClientsController):
+  
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.1) lib/rack/handler/webrick.rb:86:in `service'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/home/pici/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.9ms)
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:39:00 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  Rendered clients/_pup.html.erb (0.7ms)
+  Rendered clients/pup.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_flash.html.erb (0.8ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:39:58 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.0ms)
+  Rendered clients/_navigation.html.erb (1.9ms)
+  Rendered clients/_pup.html.erb (1.3ms)
+  Rendered clients/pup.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:40:00 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.5ms)
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:40:31 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.2ms)
+  Rendered clients/_navigation.html.erb (3.3ms)
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:40:33 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  Rendered clients/_pup.html.erb (0.7ms)
+  Rendered clients/pup.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_flash.html.erb (0.3ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:40:47 +0100
+Processing by ClientsController#request_documents as JS
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.7ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (14.7ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:40:56 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.8ms)
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:42:30 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.7ms)
+  Rendered clients/_navigation.html.erb (10.4ms)
+  Rendered clients/_pup.html.erb (1.2ms)
+  Rendered clients/pup.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 335ms (Views: 237.9ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:42:33 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.5ms)
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (66.7ms)
+  Rendered layouts/_flash.html.erb (1.1ms)
+Completed 200 OK in 107ms (Views: 98.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:42:36 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.7ms)
+  Rendered clients/_pup.html.erb (1.0ms)
+  Rendered clients/pup.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+Completed 200 OK in 67ms (Views: 61.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:42:38 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.3ms)
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:44:00 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.2ms)
+  Rendered clients/_navigation.html.erb (2.5ms)
+  Rendered clients/_pup.html.erb (2.0ms)
+  Rendered clients/pup.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 41.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:44:02 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.4ms)
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:47:11 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.0ms)
+  Rendered clients/_navigation.html.erb (1.6ms)
+  Rendered clients/_pup.html.erb (0.9ms)
+  Rendered clients/pup.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_flash.html.erb (0.9ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:47:12 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (3.1ms)
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:47:13 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.7ms)
+  Rendered clients/_navigation.html.erb (2.7ms)
+  Rendered clients/_pup.html.erb (1.0ms)
+  Rendered clients/pup.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:47:15 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.6ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:48:23 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.3ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:49:32 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.9ms)
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:50:54 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.7ms)
+  Rendered clients/_navigation.html.erb (2.9ms)
+  Rendered clients/_pup.html.erb (1.8ms)
+  Rendered clients/pup.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 59ms (Views: 53.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:50:56 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.9ms)
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:51:03 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.8ms)
+  Rendered clients/_navigation.html.erb (2.5ms)
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:51:04 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.7ms)
+  Rendered clients/_navigation.html.erb (1.5ms)
+  Rendered clients/_pup.html.erb (0.8ms)
+  Rendered clients/pup.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:52:23 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 11:52:25 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (1.0ms)
+  Rendered clients/_navigation.html.erb (1.8ms)
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (19.5ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 47.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 11:52:28 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.6ms)
+  Rendered clients/_navigation.html.erb (1.4ms)
+  Rendered clients/_pup.html.erb (0.9ms)
+  Rendered clients/pup.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 50ms (Views: 45.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 11:52:31 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.5ms)
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 12:22:03 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.8ms)
+  Rendered clients/_navigation.html.erb (1.8ms)
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:22:07 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:25:23 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:25:24 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.4ms)
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 12:25:37 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (1.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.7ms)
+  Rendered clients/_navigation.html.erb (1.3ms)
+  Rendered clients/_pup.html.erb (0.7ms)
+  Rendered clients/pup.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 12:25:39 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:25:45 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.7ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 12:32:22 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.9ms)
+  Rendered clients/_navigation.html.erb (2.0ms)
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (26.8ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+Completed 200 OK in 101ms (Views: 58.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/documents_check" for 127.0.0.1 at 2016-12-12 12:32:39 +0100
+Processing by ClientsController#documents_check as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 12:32:47 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.7ms)
+  Rendered clients/_navigation.html.erb (4.0ms)
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (17.0ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 12:32:49 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.2ms)
+  Rendered clients/_pup.html.erb (0.8ms)
+  Rendered clients/pup.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:32:53 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.4ms)
+Started GET "/documents_check" for 127.0.0.1 at 2016-12-12 12:32:57 +0100
+Processing by ClientsController#documents_check as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.5ms)
+Started GET "/clients/1" for 127.0.0.1 at 2016-12-12 12:33:27 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.4ms)
+  Rendered clients/_navigation.html.erb (1.2ms)
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "partnerships" ON "clients"."id" = "partnerships"."partner_id" WHERE "partnerships"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-12-12 12:33:29 +0100
+Processing by ClientsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_navigation.html.erb (1.5ms)
+  Rendered clients/new.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_flash.html.erb (0.9ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:33:32 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.7ms)
+Started GET "/pup" for 127.0.0.1 at 2016-12-12 12:36:33 +0100
+Processing by ClientsController#pup as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering clients/pup.html.erb within layouts/application
+  Rendered clients/_subheader.html.erb (0.5ms)
+  Rendered clients/_navigation.html.erb (1.1ms)
+  Rendered clients/_pup.html.erb (0.7ms)
+  Rendered clients/pup.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_flash.html.erb (0.8ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:37:46 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:39:10 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.7ms)
+Started GET "/documents_check" for 127.0.0.1 at 2016-12-12 12:39:13 +0100
+Processing by ClientsController#documents_check as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.5ms)
+Started GET "/request_documents" for 127.0.0.1 at 2016-12-12 12:39:18 +0100
+Processing by ClientsController#request_documents as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=):
+  
+app/controllers/clients_controller.rb:98:in `load_client'
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/pici/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
